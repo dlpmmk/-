@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工厂模式</title>
+</head>
+
+<body>
+    <h2>使用工厂模式创建一个文本输入表单域， 一个 email 表单域， 一个提交按钮</h2>
+    <script src="./index.js"></script>
+    <script>
+        var textField = FormFieldFactory.makeField({
+            type: "text",
+            displayText: "在这里输入你的地址"
+        })
+        var emailField = FormFieldFactory.makeField({
+            type: "email",
+            displayText: "在这里输入你的邮箱"
+        })
+        var buttonField = FormFieldFactory.makeField({
+            type: "button",
+            displayText: "提交"
+        })
+
+        window.addEventListener("load", function () {
+            var bodyElement = document.body;
+
+            bodyElement.appendChild(textField.getElement());
+            bodyElement.appendChild(emailField.getElement());
+            bodyElement.appendChild(buttonField.getElement());
+        })
+
+    </script>
+
+</body>
+
+</html>
