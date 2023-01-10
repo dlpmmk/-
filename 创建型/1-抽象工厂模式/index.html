@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽象工厂模式</title>
+</head>
+<body>
+    <script src="./index.js"></script>
+    <script>
+        const formFiledFactory = new Html5FiledFactory()
+        var textField = formFiledFactory.makeField({
+            type: "text",
+            displayText: "在这里输入你的地址"
+        })
+        var emailField = formFiledFactory.makeField({
+            type: "email",
+            displayText: "在这里输入你的邮箱"
+        })
+        var buttonField = formFiledFactory.makeField({
+            type: "button",
+            displayText: "提交"
+        })
+
+        window.addEventListener("load", function () {
+            var bodyElement = document.body;
+
+            bodyElement.appendChild(textField.getElement());
+            bodyElement.appendChild(emailField.getElement());
+            bodyElement.appendChild(buttonField.getElement());
+        })
+
+    </script>
+
+    
+</body>
+</html>
