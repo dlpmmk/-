@@ -4,11 +4,20 @@ const app = express()
 
 // 这里把主 index.html 也放在 public 路由下，可以通过 /public/index.html 访问
 // 同时里面的资源文件采用的是相对路径，方便调用 
-app.use('/public', express.static(rootpath.path + "/创建型/4-单例模式/"))
+const publicPath = rootpath.path + "/src"
+console.log(publicPath);
+app.use('/public', express.static(publicPath))
 
-app.get('/user/[12345]{5}', function (req, res) {
+app.get('/user/[12345]+', function (req, res) {
+    console.log(req.body);
     res.send("hello");
 })
+
+app.post('/user/*', function (req, res) {
+    res.send("anything")
+})
+
+
 
 
 
