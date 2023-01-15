@@ -2,7 +2,7 @@
  * @Author: dlpmmk 513393989@qq.com
  * @Date: 2023-01-15 10:38:49
  * @LastEditors: dlpmmk 513393989@qq.com
- * @LastEditTime: 2023-01-15 15:18:08
+ * @LastEditTime: 2023-01-15 16:13:03
  * @FilePath: /设计模式/结构型/0-适配器模式/index.js
  * @Description: 初始接口, 在 index-two 中进行适配 
  */
@@ -29,7 +29,8 @@ var http = {
                 callback(xhr.responseText)
         }
         xhr.open(type.toUpperCase(), url, true)
-        xhr.send("name=athen&passwd=12345")
+        xhr.setRequestHeader("Content-Type", "application/json")
+        xhr.send(JSON.stringify(data))
     }
 }
 
@@ -42,6 +43,6 @@ http.makeRequest("GET", "/user/12345", (response) => {
 // 更新
 http.makeRequest("POST", "/user/12345", (response) => {
     console.log("TTTP GET response received , new user data is: " + response)
-}, "company=AKQA&user=zhangsan")
+}, {name:"张三"})
 
 
