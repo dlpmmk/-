@@ -6,25 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>适配器模式</title>
-    <script src=" https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.js "></script>
 </head>
 
 <body>
     <h1>适配器模式</h1>
-    <script src="./index-one.js"></script>
+    <script src="./index-two.js"></script>
     <script>
-        $.ajax({
-            type: "POST",
-            url: "/user/1234567",
-            data: JSON.stringify({
-                name: "athen",
-                age: 19
-            }),
-            contentType: 'application/json',
-            success: (res) => {
-                console.log(res);
-            }
+        // 获取
+        http.makeRequest("GET", "/user/12345", (response) => {
+            console.log("TTTP GET response received user data is: " + response)
         })
+
+        // 更新
+        http.makeRequest("POST", "/user/12345", (response) => {
+            console.log("TTTP POST response received , new user data is: " + response)
+        }, { name: "张三" })
     </script>
 </body>
 

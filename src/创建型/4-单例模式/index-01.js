@@ -2,9 +2,9 @@
  * @Author: dlpmmk 513393989@qq.com
  * @Date: 2023-01-12 09:48:31
  * @LastEditors: dlpmmk 513393989@qq.com
- * @LastEditTime: 2023-01-12 10:02:19
- * @FilePath: /设计模式/创建型/4-单例模式/index-01.js
- * @Description:单例模式，顾名思义只有一个实例的对象，单例模式定义了一个对象创建的过程 
+ * @LastEditTime: 2023-01-16 10:43:28
+ * @FilePath: /设计模式/src/创建型/4-单例模式/index-01.js
+ * @Description:单例模式，顾名思义只有一个实例的对象， 
  */
 
 
