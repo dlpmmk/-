@@ -15,8 +15,8 @@ app.get(/^\/user\/\d+/, function (req, res) {
 })
 
 app.post(/^\/user\/\d+/, function (req, res) {
-    console.log(req.url + ":" , req.body);
-    res.send("anything")
+    console.log(req.url + ":", req.body);
+    res.send(req.body)
 })
 
 
